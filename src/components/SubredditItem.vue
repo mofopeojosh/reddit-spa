@@ -28,7 +28,7 @@
                 <a href="#" @click="dateFilter = 'down'">
                     <span class="badge border mx-1"
                           :class="dateFilter == 'down' ? 'badge-success' : 'badge-secondary'">Oldest
-                        Votes</span></a>
+                            </span></a>
                 <a href="#" @click="votesByFilter = null; dateFilter = null"><span class="badge border badge-light mx-1">Clear</span></a>
             </div>
             <template v-if="subredditPosts.length">

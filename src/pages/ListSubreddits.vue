@@ -1,23 +1,25 @@
 <template>
     <div class="row">
-        <div class="col-sm-3">
-            <ul class="list-group">
-                <a href="#"
-                   class="list-group-item text-dark"
-                   :class="selectedIndex == index ? 'bg-light' : ''"
-                   @click="selectSubreddit(index)"
-                   v-for="(subreddit, index) in subredditList"
-                   :key="index">
-                    {{ subreddit.title }}
-                </a>
-            </ul>
-            <div v-if="!subredditList.length" class="card bg-light loader-sidebar">
-                <div class="card-body">
-                    Loading Subreddits...
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-9">
+        <div class="col-sm-3 position-fixed overflow-auto fixed-sidebar">
+			<div class="fixed-sidebar-inner">
+                <ul class="list-group">
+                    <a href="#"
+                       class="list-group-item text-dark"
+                       :class="selectedIndex == index ? 'bg-light' : ''"
+                       @click="selectSubreddit(index)"
+                       v-for="(subreddit, index) in subredditList"
+                       :key="index">
+                        {{ subreddit.title }}
+                    </a>
+                </ul>
+			</div>
+		</div>
+		<div v-if="!subredditList.length" class="card bg-light loader-sidebar">
+			<div class="card-body">
+				Loading Subreddits...
+			</div>
+		</div>
+        <div class="col-sm-9 offset-3">
             <SubredditItem :subreddit="selectedSubreddit"/>
         </div>
     </div>
@@ -54,7 +56,6 @@ export default {
             this.getSubredditPosts();
         },
         getSubredditPosts() {
-            this.loadingPosts = true;
             this.$store.dispatch('getSubredditPosts', this.selectedSubreddit);
         }
     }
@@ -64,5 +65,8 @@ export default {
 <style scoped>
 .loader-sidebar{
     height: 500px;
+}
+.fixed-sidebar{
+	max-height: calc(100vh - 200px);
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
-    <div id="app" class="app-bg">
+    <div id="app" class="app">
         <AppHeader/>
-        <main class="container py-5">
+        <main class="container my-5 py-5">
             <ListSubreddits />
         </main>
     </div>
@@ -21,7 +21,8 @@ export default {
 </script>
 
 <style>
-    .app-bg{
+    .app{
         background-color: #e7ecf3;
+        min-height: 100vh;
     }
 </style>

@@ -7,15 +7,19 @@
                 <a :href="'https://reddit.com'+ post.data.permalink" target="_blank" class="text-dark">
                     <h5 class="mb-3 font-weight-normal">{{ post.data.title }}</h5>
                 </a>
-                <img v-if="post.data.url" :src="post.data.url" class="img-fluid">
+                <div class="text-center my-2">
+                    <ImgWrapper :src="post.data.url"/>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import ImgWrapper from './ImgWrapper';
 export default {
     name: 'PostCard',
+    components: {ImgWrapper},
     props: {
         post: {
             type: Object,
