@@ -1,7 +1,7 @@
 <template>
     <div class="row">
-        <div class="col-sm-3 position-fixed overflow-auto fixed-sidebar">
-			<div class="fixed-sidebar-inner">
+        <div class="col col-sm-3 position-sm-fixed fixed-sidebar overflow-auto py-5">
+			<div class="">
                 <ul class="list-group">
                     <a href="#"
                        class="list-group-item text-dark"
@@ -19,7 +19,7 @@
 				Loading Subreddits...
 			</div>
 		</div>
-        <div class="col-sm-9 offset-3">
+        <div class="col-12 col-sm-9 offset-sm-3 py-5">
             <SubredditItem :subreddit="selectedSubreddit"/>
         </div>
     </div>
@@ -67,6 +67,6 @@ export default {
     height: 500px;
 }
 .fixed-sidebar{
-	max-height: calc(100vh - 200px);
+	max-height: calc(100vh - 120px);
 }
 </style>

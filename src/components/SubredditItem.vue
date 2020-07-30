@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="col-sm-9">
-            <div class="my-2 d-flex align-items-center">
+            <div class="my-2 d-flex flex-wrap align-items-center">
                 <small>Filter:</small>
                 <a href="#" @click="votesByFilter = 'up'">
                     <span class="badge border mx-1"
