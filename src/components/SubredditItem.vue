@@ -101,7 +101,7 @@ export default {
         },
         filterPostsByDate() {
             const posts = this.allPosts.sort((a, b) => {
-                if (this.votesByFilter == 'down') {
+                if (this.dateFilter == 'down') {
                     return (b.data.date > a.data.date) ? 1 : -1;
                 }
                 return (a.data.date > b.data.date) ? 1 : -1;
