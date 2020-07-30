@@ -10,7 +10,7 @@
                        class="form-control form-control-lg rounded-pill w-100 border"/>
             </div>
         </div>
-        <div class="col-sm-9">
+        <div class="col-sm-12 col-sm-9">
             <div class="my-2 d-flex flex-wrap align-items-center">
                 <small>Filter:</small>
                 <a href="#" @click="votesByFilter = 'up'">

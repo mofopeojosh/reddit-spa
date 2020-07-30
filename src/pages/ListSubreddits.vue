@@ -1,7 +1,7 @@
 <template>
     <div class="row">
-        <div class="col col-sm-3 position-sm-fixed fixed-sidebar overflow-auto py-5">
-			<div class="">
+        <div class="col-12 col-md-3 col-lg-3 fixed-sidebar overflow-auto my-5 collapse">
+            <div>
                 <ul class="list-group">
                     <a href="#"
                        class="list-group-item text-dark"
@@ -12,14 +12,14 @@
                         {{ subreddit.title }}
                     </a>
                 </ul>
-			</div>
-		</div>
-		<div v-if="!subredditList.length" class="card bg-light loader-sidebar">
-			<div class="card-body">
-				Loading Subreddits...
-			</div>
-		</div>
-        <div class="col-12 col-sm-9 offset-sm-3 py-5">
+            </div>
+        </div>
+        <div v-if="!subredditList.length" class="card bg-light loader-sidebar">
+            <div class="card-body">
+                Loading Subreddits...
+            </div>
+        </div>
+        <div class="col-12 col-md-8 col-lg-9 offset-md-4 offset-lg-4 py-5">
             <SubredditItem :subreddit="selectedSubreddit"/>
         </div>
     </div>
@@ -38,9 +38,9 @@ export default {
     },
     mounted() {
         this.$store.dispatch('getAllPosts')
-        .then(() => {
-            this.selectSubreddit(0);
-        });
+            .then(() => {
+                this.selectSubreddit(0);
+            });
     },
     computed: {
         subredditList() {
@@ -63,10 +63,15 @@ export default {
 </script>
 
 <style scoped>
-.loader-sidebar{
-    height: 500px;
-}
-.fixed-sidebar{
-	max-height: calc(100vh - 120px);
-}
+    .loader-sidebar {
+        height: 500px;
+    }
+
+    @media (min-width: 768px) {
+        .fixed-sidebar {
+            position: fixed;
+            max-height: calc(100vh - 120px);
+        }
+    }
+
 </style>
