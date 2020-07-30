@@ -1,5 +1,5 @@
 <template>
-	<img :src="imageSrc" @error="replaceImage" class="img-fluid">
+	<img :src="imageSrc" @error="replaceImage">
 </template>
 
 <script>

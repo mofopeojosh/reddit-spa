@@ -7,8 +7,8 @@
                 <a :href="'https://reddit.com'+ post.data.permalink" target="_blank" class="text-dark">
                     <h5 class="mb-3 font-weight-normal">{{ post.data.title }}</h5>
                 </a>
-                <div class="text-center my-2">
-                    <ImgWrapper :src="post.data.url"/>
+                <div class="my-2">
+                    <ImgWrapper :src="post.data.url" class="w-100 img-fluid"/>
                 </div>
             </div>
         </div>
