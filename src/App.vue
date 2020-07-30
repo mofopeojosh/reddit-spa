@@ -1,7 +1,7 @@
 <template>
     <div id="app" class="app">
         <AppHeader/>
-        <main class="container my-5">
+        <main class="container py-5">
             <ListSubreddits />
         </main>
     </div>
