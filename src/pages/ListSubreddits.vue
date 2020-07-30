@@ -19,7 +19,7 @@
                 Loading Subreddits...
             </div>
         </div>
-        <div class="col-12 col-md-8 col-lg-9 offset-md-4 offset-lg-4 py-5">
+        <div class="col-12 col-md-7 col-lg-8 offset-md-4 offset-lg-4 py-5">
             <SubredditItem :subreddit="selectedSubreddit"/>
         </div>
     </div>
