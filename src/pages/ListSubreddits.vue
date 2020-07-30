@@ -4,7 +4,7 @@
             <ul class="list-group">
                 <a href="#"
                    class="list-group-item text-dark"
-                   :class="selectedIndex == index ? 'bg-primary' : ''"
+                   :class="selectedIndex == index ? 'bg-light' : ''"
                    @click="selectSubreddit(index)"
                    v-for="(subreddit, index) in subredditList"
                    :key="index">
