@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="col-12 col-md-3 col-lg-3 fixed-sidebar overflow-auto my-5 collapse">
+        <div class="col-12 col-md-3 col-lg-3 fixed-sidebar overflow-auto my-5">
             <div>
                 <ul class="list-group">
                     <a href="#"
