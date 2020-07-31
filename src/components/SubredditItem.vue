@@ -10,7 +10,7 @@
 			</div>
 		</div>
 		<div class="col-sm-12 col-sm-9">
-			<div class="d-flex align-items-end my-1">
+			<div class="d-flex flex-wrap align-items-end my-1">
 				<a href="#" @click="voteSort = 'up'">
 					<span class="badge border mx-1" :class="voteSort == 'up' ? 'badge-success' : 'badge-secondary'">Highest
 						Votes</span></a>
@@ -26,15 +26,15 @@
 				<a href="#" @click="clearFilter"><span class="badge border badge-light mx-1">Clear</span></a>
 			</div>
 			<div class="form-inline mb-2">
-				<div class="d-flex justify-content-center my-1">
-					<div class="input-group input-group-sm mr-2">
+				<div class="d-flex flex-wrap justify-content-center">
+					<div class="input-group input-group-sm m-1">
 						<div class="input-group-prepend">
 							<span class="input-group-text">Date</span>
 						</div>
 						<input type="date" v-model="minDateFilter" class="form-control">
 						<input type="date" v-model="maxDateFilter" class="form-control">
 					</div>
-					<div class="input-group input-group-sm">
+					<div class="input-group input-group-sm m-1">
 						<div class="input-group-prepend">
 							<span class="input-group-text">No of Upvotes</span>
 						</div>
