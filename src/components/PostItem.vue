@@ -3,7 +3,7 @@
         <div class="card-body">
             <div>
                 <small>
-                    {{ abbreviateVotes(post.data.ups) }} votes | Posted {{ formatDate(post.data.created) }}</small>
+                    {{ abbreviateVotes(post.data.ups) }} votes | Posted {{ formatDate(post.data.created_utc) }}</small>
                 <a :href="'https://reddit.com'+ post.data.permalink" target="_blank" class="text-dark">
                     <h5 class="mb-3 font-weight-normal">{{ post.data.title }}</h5>
                 </a>
@@ -37,7 +37,7 @@ export default {
         formatDate(timestamp) {
             const date = new Date(timestamp * 1000);
             const month = date.toLocaleString('default', {month: 'short'});
-            return `${date.getDay()} ${month}, ${date.getFullYear()}`;
+            return `${date.getDate()} ${month}, ${date.getFullYear()}`;
         }
     }
 };
