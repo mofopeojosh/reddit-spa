@@ -1,9 +1,7 @@
 <template>
-    <div id="app" class="app">
+    <div id="app" class="app position-md-fixed overflow-scroll h-100 w-100">
         <AppHeader/>
-        <main class="container py-5">
-            <ListSubreddits />
-        </main>
+        <ListSubreddits />
     </div>
 </template>
 
@@ -21,6 +19,14 @@ export default {
 </script>
 
 <style>
+    @media (min-width: 768px) {
+        .position-md-fixed {
+            position: fixed;
+        }
+        .position-md-absolute {
+            position: absolute;
+        }
+    }
     .app{
         background-color: #e7ecf3;
         min-height: 100vh;

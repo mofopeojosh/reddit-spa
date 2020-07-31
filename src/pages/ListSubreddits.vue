@@ -1,28 +1,43 @@
 <template>
-    <div class="row">
-        <div class="col-12 col-md-3 col-lg-3 fixed-sidebar overflow-auto my-5">
-            <div>
-                <ul class="list-group">
-                    <a href="#"
-                       class="list-group-item text-dark"
-                       :class="selectedIndex == index ? 'bg-light' : ''"
-                       @click="selectSubreddit(index)"
-                       v-for="(subreddit, index) in subredditList"
-                       :key="index">
-                        {{ subreddit.title }}
-                    </a>
-                </ul>
-            </div>
-        </div>
-        <div v-if="!subredditList.length" class="card bg-light loader-sidebar">
-            <div class="card-body">
-                Loading Subreddits...
-            </div>
-        </div>
-        <div class="col-12 col-md-7 col-lg-8 offset-md-4 offset-lg-4 py-5">
-            <SubredditItem :subreddit="selectedSubreddit"/>
-        </div>
-    </div>
+	<main class="w-100 app-body">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-3 position-relative">
+					<div v-if="!subredditList.length" class="col card bg-light fixed-sidebar overflow-auto my-5">
+						<div class="card-body">
+							Loading Subreddits...
+						</div>
+					</div>
+					<div class="col fixed-sidebar overflow-auto my-5" v-else>
+						<ul class="list-group">
+							<a href="#"
+								class="list-group-item text-dark"
+								:class="selectedIndex == index ? 'bg-light' : ''"
+								@click="selectSubreddit(index)"
+								v-for="(subreddit, index) in subredditList"
+								:key="index">
+								{{ subreddit.title }}
+							</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="w-100 h-100 position-md-absolute overflow-auto" v-if="selectedSubreddit">
+			<div class="container py-5">
+				<div class="row">
+					<div class="col-12 col-md-9 offset-md-3">
+						<SubredditItem :subreddit="selectedSubreddit"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="my-5 py-5 text-center" v-else>
+			<div class="spinner-border" role="status">
+				<span class="sr-only">Loading...</span>
+			</div>
+		</div>
+	</main>
 </template>
 
 <script>
@@ -63,15 +78,17 @@ export default {
 </script>
 
 <style scoped>
-    .loader-sidebar {
-        height: 500px;
-    }
-
     @media (min-width: 768px) {
         .fixed-sidebar {
-            position: fixed;
-            max-height: calc(100vh - 120px);
+			z-index: 100;
+			position: absolute;
+			max-height: calc(100vh - 130px);
         }
     }
+	.app-body{
+		height: calc(100vh - 56px);
+		margin-top: 56px;
+		position: relative;
+	}
 
 </style>
