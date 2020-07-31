@@ -36,7 +36,7 @@
 					</div>
 					<div class="input-group input-group-sm">
 						<div class="input-group-prepend">
-							<span class="input-group-text">No of votes</span>
+							<span class="input-group-text">No of Upvotes</span>
 						</div>
 						<input type="number" v-model="minVoteFilter" class="form-control">
 						<input type="number" v-model="maxVoteFilter" class="form-control">
