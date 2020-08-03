@@ -88,11 +88,11 @@ export default {
             voteRangeFilter: '',
             voteFilterOptions: {
                 '0 - 100': {min: 0, max: 100},
-                '101 - 500': {min: 100, max: 500},
-                '501 - 1000': {min: 500, max: 1000},
-                '1001 - 10000': {min: 1000, max: 10000},
-                '10001 - 50000': {min: 10000, max: 50000},
-                'More than 50000': {min: 50000, max: null},
+                '101 - 500': {min: 101, max: 500},
+                '501 - 1000': {min: 501, max: 1000},
+                '1001 - 10000': {min: 1001, max: 10000},
+                '10001 - 50000': {min: 10001, max: 50000},
+                'More than 50000': {min: 50001, max: null},
             }
         };
     },
