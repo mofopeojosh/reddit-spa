@@ -25,12 +25,8 @@ export default {
             type: Object,
             default: () => ({})
         },
-        showPath: Boolean
     },
     methods: {
-        viewSubreddit(subreddit) {
-            this.$store.dispatch('getSubreddit', subreddit);
-        },
         abbreviateVotes(vote) {
             return Math.abs(vote) > 999 ? Math.sign(vote) * ((Math.abs(vote) / 1000).toFixed(1)) + 'k' : Math.sign(vote) * Math.abs(vote);
         },

@@ -47,9 +47,8 @@
                         </select>
                     </div>
                 </div>
-				<button class="btn btn-sm border btn-light mx-1" @click="clearFilter">Clear filters</button>
-
-			</div>
+                <button class="btn btn-sm border btn-light mx-1" @click="clearFilter">Clear filters</button>
+            </div>
             <template v-if="subredditPosts.length">
                 <div class="mb-4" v-for="(subreddit, index) in subredditPosts" :key="index">
                     <PostItem :post="subreddit"/>
@@ -77,10 +76,6 @@ export default {
             type: Object,
             default: () => ({})
         },
-        posts: {
-            type: Array,
-            default: () => ([])
-        }
     },
     components: {PostItem},
     data() {
@@ -100,6 +95,11 @@ export default {
                 'More than 50000': {min: 50000, max: null},
             }
         };
+    },
+    watch: {
+		subreddit(){
+			this.clearFilter();
+		}
     },
     computed: {
         subredditPosts() {
